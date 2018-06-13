@@ -20,7 +20,7 @@ func main() {
 		vars := mux.Vars(r) // Extract all the dynamic segments
 		fmt.Fprintf(w, "You requested book: %s page # %s", vars["book"], vars["page"])
 	})
-
+/*
 	// Grouping HandleFunctions
 	booksHandle := r.PathPrefix("/books").Subrouter()
 	booksHandle.HandleFunc("/", ListBooks)
@@ -33,6 +33,10 @@ func main() {
 	r.HandleFunc("/login", LoginPage).Schemes("https")
 	r.HandleFunc("/about", AboutPage).Schemes("http")
 
+	// Static assets
+	fs := http.FileServer(http.Dir("assets"))
+	r.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", fs))
+*/
 	// Start server and pass mux router
 	http.ListenAndServe(":80", r)
 }
