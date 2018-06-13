@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact form</title>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+</head>
+<body>
+<div class="col-8 text-center">
+    <div>
+    {{if .Success}}
+        <p class="text-primary">Message sent successfully</p>
+    {{end}}
+    </div>
+    <form class="form">
+        <h3>Contact form</h3>
+        <div>
+            <input type="text" name="name" placeholder="Your name here ..." class="form-control">
+        </div>
+        <div>
+            <input type="text" name="subject" placeholder="Subject ..." class="form-control">
+        </div>
+        <div>
+            <textarea name="body" id="message" cols="30" rows="10" class="form-control"/>
+        </div>
+        <div>
+            <input type="submit" class="button btn-outline-primary">
+        </div>
+    </form>
+</div>
+<script src="/assets/js/bootstrap.min.js"></script>
+</body>
+</html>
